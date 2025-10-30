@@ -1,0 +1,318 @@
+/**
+ * TopNavigation 组件样式
+ */
+
+.top-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--color-nav-bg-light);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-border-light);
+  transition: all 0.3s ease;
+}
+
+.dark .top-navigation {
+  background: var(--color-nav-bg-dark);
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: 64px;
+}
+
+/* Logo 样式 */
+.nav-logo {
+  flex-shrink: 0;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: var(--color-primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 菜单样式 */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: var(--color-text-secondary-light);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-icon {
+  font-size: 1rem;
+}
+
+.nav-item:hover {
+  color: var(--color-brand-purple);
+  background: var(--color-hover-light);
+}
+
+.nav-item.active {
+  color: var(--color-brand-purple);
+  background: var(--color-gray-100);
+}
+
+/* 暗色主题下的菜单项 */
+.dark .nav-item {
+  color: var(--color-text-secondary-dark);
+}
+
+.dark .nav-item:hover {
+  color: var(--color-brand-purple-light);
+  background: var(--color-hover-dark);
+}
+
+.dark .nav-item.active {
+  color: var(--color-gray-100);
+  background: var(--color-brand-purple-dark);
+}
+
+/* 右侧操作区样式 */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+/* 主题切换按钮 */
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--color-border-light);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--color-text-primary-light);
+}
+
+.theme-toggle:hover {
+  background: var(--color-hover-light);
+  border-color: var(--color-gray-300);
+}
+
+/* 暗色主题下的主题切换按钮 */
+.dark .theme-toggle {
+  border-color: var(--color-gray-700);
+  color: var(--color-text-primary-dark);
+}
+
+.dark .theme-toggle:hover {
+  background: var(--color-hover-dark);
+  border-color: var(--color-text-secondary-light);
+}
+
+.theme-icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-icon svg {
+  width: 20px;
+  height: 20px;
+  color: inherit;
+}
+
+/* 用户信息样式 */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.user-info:hover {
+  background: var(--color-hover-light);
+}
+
+/* 暗色主题下的用户信息 */
+.dark .user-info:hover {
+  background: var(--color-hover-dark);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-primary-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.user-name {
+  font-weight: 500;
+  color: var(--color-text-primary-light);
+  font-size: 0.875rem;
+}
+
+/* 暗色主题下的用户名 */
+.dark .user-name {
+  color: var(--color-text-primary-dark);
+}
+
+/* 退出登录按钮 */
+.logout-btn {
+  background: none;
+  border: 1px solid var(--color-border-light);
+  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary-light);
+}
+
+.logout-btn:hover {
+  background: var(--color-danger-alpha);
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.dark .logout-btn {
+  border-color: var(--color-gray-700);
+  color: var(--color-text-secondary-dark);
+}
+
+.dark .logout-btn:hover {
+  background: var(--color-danger-alpha);
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+/* 认证链接样式 */
+.auth-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.auth-link {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.auth-link:not(.register) {
+  color: var(--color-text-primary-light);
+}
+
+.auth-link:not(.register):hover {
+  color: var(--color-brand-purple);
+  background: var(--color-hover-light);
+}
+
+.auth-link.register {
+  background: var(--color-brand-purple);
+  color: white;
+  border-color: var(--color-brand-purple);
+}
+
+.auth-link.register:hover {
+  background: var(--color-brand-purple-600);
+  border-color: var(--color-brand-purple-600);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--color-brand-purple-alpha);
+}
+
+/* 暗色主题下的认证链接 */
+.dark .auth-link:not(.register) {
+  color: var(--color-text-primary-dark);
+}
+
+.dark .auth-link:not(.register):hover {
+  color: var(--color-brand-purple-light);
+  background: var(--color-hover-dark);
+}
+
+.dark .auth-link.register {
+  background: var(--color-brand-purple-light);
+  border-color: var(--color-brand-purple-light);
+}
+
+.dark .auth-link.register:hover {
+  background: var(--color-brand-purple);
+  border-color: var(--color-brand-purple);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+  
+  .nav-container {
+    padding: 0 0.75rem;
+  }
+  
+  .nav-actions {
+    gap: 0.5rem;
+  }
+  
+  .user-name {
+    display: none;
+  }
+  
+  .auth-links {
+    gap: 0.5rem;
+  }
+  
+  .auth-link {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.75rem;
+  }
+  
+  .logout-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.6875rem;
+  }
+}

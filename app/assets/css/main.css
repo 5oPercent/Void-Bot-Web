@@ -1,0 +1,119 @@
+/* 引入颜色变量 */
+@import url('./variables/colors.css');
+
+/* 全局样式重置和基础设置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* HTML 基础样式 */
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.3s ease;
+  background: var(--color-bg-light); /* 默认使用亮色背景 */
+}
+
+/* HTML 主题样式 */
+.dark html {
+  background: var(--color-bg-dark);
+}
+
+html:not(.dark) {
+  background: var(--color-bg-light);
+}
+
+/* Body 基础样式 */
+body {
+  color: var(--color-text-primary-light); /* 默认使用暗色文字 */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Body 主题样式 */
+.dark body {
+  background: var(--color-bg-dark) !important;
+  color: var(--color-text-primary-dark);
+}
+
+html:not(.dark) body {
+  background: var(--color-bg-light) !important;
+  color: var(--color-text-primary-light);
+}
+
+/* 主内容区域样式 */
+.main-content {
+  padding-top: 64px; /* 为固定的顶部导航留出空间 */
+  min-height: 100vh;
+}
+
+/* 滚动条基础样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* 滚动条轨道 - 默认亮色 */
+::-webkit-scrollbar-track {
+  background: var(--color-scrollbar-track-light);
+}
+
+/* 滚动条滑块 - 默认亮色 */
+::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-scrollbar-thumb-hover-light);
+}
+
+/* 滚动条亮色主题样式 */
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: var(--color-scrollbar-track-light);
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb-light);
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-scrollbar-thumb-hover-light);
+}
+
+/* 滚动条暗色主题样式 */
+.dark ::-webkit-scrollbar-track {
+  background: var(--color-scrollbar-track-dark);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--color-scrollbar-thumb-dark);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-scrollbar-thumb-hover-dark);
+}
+
+/* 全局过渡动画 */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* 页面切换动画 */
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(20px);
+}
